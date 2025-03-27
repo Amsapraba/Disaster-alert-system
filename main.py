@@ -61,7 +61,7 @@ if menu == "Before Tsunami":
     for i, activity in enumerate(seismic_data):
         seismic_chart.line_chart(seismic_data[: i + 1])
         st.write(
-            f\"🌍 Seismic Activity: **{activity:.2f} units** | Status: {anomaly_status[i]}\"
+            f"🌍 Seismic Activity: **{activity:.2f} units** | Status: {anomaly_status[i]}"
         )
         if anomaly_status[i] == "⚠️ High Anomaly - Possible Tsunami!":
             st.error("🚨 **ALERT: High Anomaly Detected! Possible Tsunami Risk!**")
@@ -89,39 +89,7 @@ if menu == "During Tsunami":
     for i, height in enumerate(wave_data):
         wave_chart.line_chart(wave_data[: i + 1])
         st.write(
-            f\"🌊 Wave Height: **{height:.2f} meters** | Risk Level: {risk_status[i]}\"
+            f"🌊 Wave Height: **{height:.2f} meters** | Risk Level: {risk_status[i]}"
         )
         if risk_status[i] == "⚠️ High Risk - Immediate Evacuation!":
-            st.error("🚨 **ALERT: High Risk! Immediate Evacuation Required!**")
-        elif risk_status[i] == "🟠 Moderate Risk - Stay Alert":
-            st.warning("⚠️ **Caution: Moderate Risk. Stay Alert!**")
-        else:
-            st.success("✅ **Low Risk. No Immediate Danger.**")
-
-        time.sleep(0.5)
-
-    st.success("📡 **Real-Time Monitoring Completed. Data Recorded.**")
-
-# ---- AFTER TSUNAMI: Impact Analysis ----
-if menu == "After Tsunami":
-    st.title("🌊 Tsunami Impact Analysis")
-    st.write("Analyze post-tsunami damage and casualty reports.")
-    st.write(
-        """
-        📊 **Impact Reports:** Visualize damage to coastal regions.
-        📈 **Casualty Analysis:** Analyze affected population.
-        🔥 **Damage Estimation:** Estimate economic loss.
-        """
-    )
-
-# ---- RESCUE OPERATIONS: Coordination & Relief ----
-if menu == "Rescue Operations":
-    st.title("🚁 Rescue Operations Management")
-    st.write("Coordinate and dispatch relief teams efficiently.")
-    st.write(
-        """
-        🚑 **Dispatch Teams:** Send immediate medical assistance.
-        🚧 **Route Optimization:** Identify the fastest paths.
-        🛟 **Resource Allocation:** Allocate resources effectively.
-        """
-    )
+            st.error("🚨 **ALERT: High Risk!**
