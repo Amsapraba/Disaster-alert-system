@@ -1,7 +1,5 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import time
 
 # ---- Sidebar Dashboard ----
@@ -92,4 +90,36 @@ if menu == "During Tsunami":
             f"🌊 Wave Height: **{height:.2f} meters** | Risk Level: {risk_status[i]}"
         )
         if risk_status[i] == "⚠️ High Risk - Immediate Evacuation!":
-            st.error("🚨 **ALERT: High Risk!**
+            st.error("🚨 **ALERT: High Risk! Immediate Evacuation Required!**")
+        elif risk_status[i] == "🟠 Moderate Risk - Stay Alert":
+            st.warning("⚠️ **Caution: Moderate Risk. Stay Alert!**")
+        else:
+            st.success("✅ **Low Risk. No Immediate Danger.**")
+
+        time.sleep(0.5)
+
+    st.success("📡 **Real-Time Monitoring Completed. Data Recorded.**")
+
+# ---- AFTER TSUNAMI: Impact Analysis ----
+if menu == "After Tsunami":
+    st.title("🌊 Tsunami Impact Analysis")
+    st.write("Analyze post-tsunami damage and casualty reports.")
+    st.write(
+        """
+        📊 **Impact Reports:** Visualize damage to coastal regions.
+        📈 **Casualty Analysis:** Analyze affected population.
+        🔥 **Damage Estimation:** Estimate economic loss.
+        """
+    )
+
+# ---- RESCUE OPERATIONS: Coordination & Relief ----
+if menu == "Rescue Operations":
+    st.title("🚁 Rescue Operations Management")
+    st.write("Coordinate and dispatch relief teams efficiently.")
+    st.write(
+        """
+        🚑 **Dispatch Teams:** Send immediate medical assistance.
+        🚧 **Route Optimization:** Identify the fastest paths.
+        🛟 **Resource Allocation:** Allocate resources effectively.
+        """
+    )
